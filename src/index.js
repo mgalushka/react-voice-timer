@@ -105,6 +105,9 @@ class App extends React.Component {
     if ((min === 0) & (sec === 0)) {
       this.finishTimer.play();
       clearInterval(this.intervalHandle);
+      this.setState({
+        isClicked: false
+      });
     }
 
     if (this.secondsRemaining === this.initialTimer / 2) {

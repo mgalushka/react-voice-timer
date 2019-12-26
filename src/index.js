@@ -7,7 +7,7 @@ class TimerInput extends React.Component {
   render() {
     return (
       <div style={{ marginLeft: 100 }}>
-        <h3>Input your desired time</h3>
+        <h3>Input your desired time in minutes</h3>
         <input
           type="number"
           value={this.props.value}
@@ -125,7 +125,8 @@ class App extends React.Component {
     this.initialTimer = time * 60;
     this.secondsRemaining = time * 60;
     this.setState({
-      isClicked: true
+      isClicked: true,
+      value: ""
     });
   }
 

@@ -63,6 +63,10 @@ class App extends React.Component {
       "https://maximgalushka.com/wp-content/uploads/2019/12/95245__tim-kahn__one-minute-left.wav";
     this.oneMinute = new Audio(oneMinuteUrl);
 
+    const finishTimerUrl =
+      "https://maximgalushka.com/wp-content/uploads/2019/12/384188__inspectorj__rooster-crowing-a.wav";
+    this.finishTimer = new Audio(finishTimerUrl);
+
     this.initialTimer;
     this.secondsRemaining;
     this.intervalHandle;
@@ -99,6 +103,7 @@ class App extends React.Component {
     }
 
     if ((min === 0) & (sec === 0)) {
+      this.finishTimer.play();
       clearInterval(this.intervalHandle);
     }
 

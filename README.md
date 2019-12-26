@@ -6,4 +6,4 @@ Counts down time, tells you when this is half time and when one minute left.
 
 Find it here:
 
-https://csb-3035y.now.sh
+https://csb-u0gjs.now.sh

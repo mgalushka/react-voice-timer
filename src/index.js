@@ -145,6 +145,7 @@ class App extends React.Component {
 
   render() {
     const clicked = this.state.isClicked;
+    console.log(this.state.value);
     if (clicked) {
       return (
         <div>

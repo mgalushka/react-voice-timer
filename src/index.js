@@ -1,8 +1,11 @@
+// @flow
+
 import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { string } from "prop-types";
 
 class TimerInput extends React.Component {
   render() {
@@ -20,21 +23,24 @@ class TimerInput extends React.Component {
   }
 }
 
-class Timer extends React.Component {
-  render() {
-    let minutes = "00";
-    if (this.props.value !== "") {
-      minutes = this.props.value;
-    }
-    return (
-      <div>
-        <h1 style={{ fontSize: 100, marginLeft: 100 }}>
-          {minutes}:{this.props.seconds}
-        </h1>
-      </div>
-    );
+type TimerProps = {|
+  value: string,
+  seconds: string
+|};
+
+const Timer = (props: TimerProps) => {
+  let minutes = "00";
+  if (props.value !== "") {
+    minutes = props.value;
   }
-}
+  return (
+    <div>
+      <h1 style={{ fontSize: 100, marginLeft: 100 }}>
+        {minutes}:{props.seconds}
+      </h1>
+    </div>
+  );
+};
 
 class StartButton extends React.Component {
   render() {

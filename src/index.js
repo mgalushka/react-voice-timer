@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class TimerInput extends React.Component {
   render() {

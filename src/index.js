@@ -21,10 +21,14 @@ class TimerInput extends React.Component {
 
 class Timer extends React.Component {
   render() {
+    let minutes = "00";
+    if (this.props.value !== "") {
+      minutes = this.props.value;
+    }
     return (
       <div>
         <h1 style={{ fontSize: 100, marginLeft: 100 }}>
-          {this.props.value}:{this.props.seconds}
+          {minutes}:{this.props.seconds}
         </h1>
       </div>
     );
@@ -134,6 +138,7 @@ class App extends React.Component {
 
   render() {
     const clicked = this.state.isClicked;
+    console.log(this.state.value);
     if (clicked) {
       return (
         <div>

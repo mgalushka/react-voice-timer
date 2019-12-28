@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class TimerInput extends React.Component {
   render() {
@@ -21,10 +22,14 @@ class TimerInput extends React.Component {
 
 class Timer extends React.Component {
   render() {
+    let minutes = "00";
+    if (this.props.value !== "") {
+      minutes = this.props.value;
+    }
     return (
       <div>
         <h1 style={{ fontSize: 100, marginLeft: 100 }}>
-          {this.props.value}:{this.props.seconds}
+          {minutes}:{this.props.seconds}
         </h1>
       </div>
     );
@@ -102,11 +107,13 @@ class App extends React.Component {
       });
     }
 
-    if ((min === 0) & (sec === 0)) {
+    if (this.secondsRemaining < 0 || (min === 0 && sec === 0)) {
       this.finishTimer.play();
       clearInterval(this.intervalHandle);
       this.setState({
-        isClicked: false
+        isClicked: false,
+        value: "",
+        seconds: "00"
       });
     }
 
